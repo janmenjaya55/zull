@@ -34,5 +34,6 @@ spec:
     - protocol: "TCP"
       port: 8090 # The port that the service is running on in the cluster
       targetPort: 8090 # The port exposed by the service
-      nodePort: 30002
+      #nodePort: 30002
+      nodePort: 8090
   type: NodePort # type of the service.
