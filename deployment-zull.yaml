@@ -18,7 +18,7 @@ spec:
           #imagePullPolicy: IfNotPresent
           imagePullPolicy: Always
           ports:
-            - containerPort: 8090 # The port that the container is running on in the cluster
+            - containerPort: 30002 # The port that the container is running on in the cluster
 
 
 ---
@@ -32,7 +32,7 @@ spec:
     app: spring-boot-k8s
   ports:
     - protocol: "TCP"
-      port: 8090 # The port that the service is running on in the cluster
-      targetPort: 8090 # The port exposed by the service
+      port: 30002 # The port that the service is running on in the cluster
+      targetPort: 30002 # The port exposed by the service
       nodePort: 30002
   type: NodePort # type of the service.
