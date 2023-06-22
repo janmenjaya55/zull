@@ -15,8 +15,8 @@ spec:
       containers:
         - name: zull
           image: janmenjaya/zull:latest # Image that will be used to containers in the cluster
-          #imagePullPolicy: IfNotPresent
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
+          #imagePullPolicy: Always
           ports:
             - containerPort: 30002 # The port that the container is running on in the cluster
 
