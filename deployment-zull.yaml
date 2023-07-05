@@ -26,7 +26,8 @@ spec:
 apiVersion: v1 # Kubernetes API version
 kind: Service # Kubernetes resource kind we are creating
 metadata: # Metadata of the resource kind we are creating
-  name: zull-service
+  name: zull
+  #name: zull-service
 spec:
   selector:
     app: spring-boot-k8s
