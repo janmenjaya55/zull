@@ -1,39 +1,21 @@
 apiVersion: apps/v1
-kind: Deployment # Kubernetes resource kind we are creating
+kind: Deployment
 metadata:
   name: zull
+  labels:
+    app: zull
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: spring-boot-k8s
-  replicas: 1 # Number of replicas that will be created for this deployment
+      app: zull
   template:
     metadata:
       labels:
-        app: spring-boot-k8s
+        app: zull
     spec:
       containers:
-        - name: zull
-          image: janmenjaya/zull:latest # Image that will be used to containers in the cluster
-          imagePullPolicy: IfNotPresent
-          #imagePullPolicy: Always
-          ports:
-            - containerPort: 30002 # The port that the container is running on in the cluster
-
-
----
-
-apiVersion: v1 # Kubernetes API version
-kind: Service # Kubernetes resource kind we are creating
-metadata: # Metadata of the resource kind we are creating
-  name: zull
-  #name: zull-service
-spec:
-  selector:
-    app: spring-boot-k8s
-  ports:
-    - protocol: "TCP"
-      port: 30002 # The port that the service is running on in the cluster
-      targetPort: 30002 # The port exposed by the service
-      nodePort: 31547
-  type: NodePort # type of the service.
+      - name: zull
+        image: janmenjaya/zull
+        ports:
+        - containerPort: 30002
