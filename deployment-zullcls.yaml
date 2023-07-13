@@ -5,7 +5,7 @@ metadata:
   labels:
     app: zull
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: zull
@@ -18,7 +18,7 @@ spec:
       - name: zull
         image: janmenjaya/zull
         ports:
-        - containerPort: 30001  
+        - containerPort: 30002  
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -40,9 +40,9 @@ spec:
   - 10.110.193.61
   internalTrafficPolicy: Cluster
   ports:
-  - port: 30001
+  - port: 30002
     protocol: TCP
-    targetPort: 30001
+    targetPort: 30002
   selector:
     app: zull
   sessionAffinity: None
